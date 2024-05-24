@@ -5,7 +5,7 @@
     height: 100vh;
     .auth-sidebar-content {
       width: 100%;
-      .auth-sidebar-video {
+      .auth-sidebar-img {
         width: 100%;
         height: 100vh;
         object-fit: cover;
@@ -24,8 +24,11 @@
       width: 100%;
       max-width: 400px;
       .title-login {
-        margin-bottom: 30px;
-        font: bold 24px/29px 'Mona Sans', 'Helvetica Neue', Helvetica, Arial,
+        width: 100%;
+        text-align: center;
+        color: #4b4b4b !important;
+        margin-bottom: 25px;
+        font: bold 20px/25px 'Mona Sans', 'Helvetica Neue', Helvetica, Arial,
           sans-serif;
       }
       .btn-login {
@@ -46,5 +49,16 @@
         font-weight: 400;
       }
     }
+  }
+  .logo-header {
+    width: 100%;
+    text-align: center;
+    font-size: 46px;
+    font-family: 'Yesteryear', cursive !important;
+    background: #363636;
+    background: -webkit-linear-gradient(to bottom, #363636, #ffdde1);
+    background: linear-gradient(to bottom, #363636, #ffdde1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

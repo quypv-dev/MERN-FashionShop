@@ -1,5 +1,9 @@
-import { UserOutlined, LogoutOutlined,SettingOutlined } from '@ant-design/icons';
-import { Dropdown, Row, Space, Switch, Typography } from 'antd';
+import {
+  UserOutlined,
+  LogoutOutlined,
+  ShoppingOutlined,
+} from '@ant-design/icons';
+import { Badge, Dropdown, Row, Space, Switch, Typography } from 'antd';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -43,7 +47,7 @@ const DropProfile = () => {
 
   return (
     <Space direction="horizontal" size={'large'}>
-      <Switch
+      {/* <Switch
         checkedChildren="EN"
         unCheckedChildren="VI"
         defaultChecked={localStorage.getItem('lang') === 'en' ? true : false}
@@ -51,7 +55,10 @@ const DropProfile = () => {
           localStorage.setItem('lang', e ? 'en' : 'vi');
           i18n.changeLanguage(e ? 'en' : 'vi');
         }}
-      />
+      /> */}
+      <Badge count={5} size="small">
+        <ShoppingOutlined style={{ fontSize: '18px', cursor: 'pointer' }} />
+      </Badge>
       <Dropdown
         menu={{
           items,
@@ -59,7 +66,6 @@ const DropProfile = () => {
             handleUser(item.key);
           },
         }}
-        
         trigger={['hover']}
         className="profile-dropdown"
         overlayClassName="profile-menu"
@@ -67,7 +73,7 @@ const DropProfile = () => {
         // onOpenChange={() => setActiveItem(!activeItem)}
       >
         <Typography.Text className="drop-name font-bold text-[#5646ff]">
-        <SettingOutlined />
+          <UserOutlined style={{ fontSize: '16px' }} />
         </Typography.Text>
       </Dropdown>
     </Space>

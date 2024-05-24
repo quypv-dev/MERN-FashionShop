@@ -37,7 +37,7 @@ const NotFound = () => {
           autoPlay
           loop
           muted
-          src="https://cdn.dribbble.com/users/721278/screenshots/17116621/media/9c6a9e9e7c2e476e7eb14ebda887cbfa.mp4"
+          src="https://cdn.dribbble.com/userupload/11436308/file/original-f1f7249842e27472c561534dfbc93cd5.mp4"
           className="video-frame"
         ></video>
       </Col>

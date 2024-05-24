@@ -66,18 +66,69 @@ const Login = () => {
     <div id="main-container">
       {contextHolder}
       <Row className="auth-sidebar">
-        <Col xs={0} sm={8} md={8} className="auth-sidebar-content">
-          <video
-            className="auth-sidebar-video"
-            autoPlay
-            loop
-            muted
-            src="https://cdn.dribbble.com/users/721278/screenshots/15322527/media/ed945c1890320c7ca9be231cd7397653.mp4"
-          ></video>
+        <Col xs={0} sm={8} md={10} className="auth-sidebar-content">
+          <img
+            className="auth-sidebar-img"
+            src="https://cdn.dribbble.com/users/110372/screenshots/4834868/media/4bdf88d8fe39209bb3a22a1fa76edac6.gif"
+            alt="img-login"
+          />
         </Col>
-        <Col xs={24} sm={16} md={16} className="form-login">
+        <Col xs={24} sm={16} md={14} className="form-login">
           <Space direction="vertical" className="form-content">
+            <Typography className="logo-header">
+              {t('SYSTEM.LOGO_NAME')}
+            </Typography>
             <Typography className="title-login">{t('LOGIN.TEXT')}</Typography>
+
+            <Form
+              name="normal_login"
+              className="login-form w-100"
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinish}
+            >
+              <Form.Item
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: t('LOGIN.EMAIL_VALIDATION'),
+                  },
+                ]}
+              >
+                <Input
+                  prefix={<UserOutlined className="site-form-item-icon" />}
+                  placeholder={t('LOGIN.EMAIL_PLACEHOLDER')}
+                  type="email"
+                />
+              </Form.Item>
+              <Form.Item
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: t('LOGIN.PASSWORD_VALIDATION'),
+                  },
+                ]}
+              >
+                <Input
+                  prefix={<LockOutlined className="site-form-item-icon" />}
+                  type="password"
+                  placeholder={t('LOGIN.PASSWORD_PLACEHOLDER')}
+                />
+              </Form.Item>
+              <Form.Item>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="btn-login w-100"
+                >
+                  {t('LOGIN.LOGIN')}
+                </Button>
+              </Form.Item>
+            </Form>
+            <Divider>{t('LOGIN.OR')}</Divider>
             <Button
               className="btn-login"
               type="secondary"
@@ -92,55 +143,6 @@ const Login = () => {
                 {t('LOGIN.WITH_GOOGLE')}
               </div>
             </Button>
-            <Divider>{t('LOGIN.WITH_EMAIL')}</Divider>
-            <Form
-              name="normal_login"
-              className="login-form w-100"
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish}
-            >
-              <Form.Item
-                name="email"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your Email!',
-                  },
-                ]}
-              >
-                <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Email"
-                  type="email"
-                />
-              </Form.Item>
-              <Form.Item
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your Password!',
-                  },
-                ]}
-              >
-                <Input
-                  prefix={<LockOutlined className="site-form-item-icon" />}
-                  type="password"
-                  placeholder="Password"
-                />
-              </Form.Item>
-              <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="btn-login w-100"
-                >
-                  Log in
-                </Button>
-              </Form.Item>
-            </Form>
           </Space>
         </Col>
       </Row>
